@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import "./App.scss";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
@@ -30,16 +30,16 @@ function Home() {
     }
   };
   return (
-    <div>
+    <div className="container">
       <input
         type="number"
         onChange={(e) => setUserNumber(Number(e.target.value))}
       />
-      <button onClick={handleNumber}>Tahmin Et</button>
+      <button onClick={handleNumber}>Guess The Number</button>
       <button onClick={() => setRandomNumber(Math.floor(Math.random() * 101))}>
-        Yeni Sayı
+        New Number
       </button>
-      <div>{message}</div>
+      <div>{message.toUpperCase()}</div>
     </div>
   );
 }
